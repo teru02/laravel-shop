@@ -14,4 +14,11 @@ class Item extends Model
     public function images(){
         return $this->hasMany('App\ItemImage');
     }
+
+    public static function boot(){
+        parent::boot();
+        static::deleting(function($item){
+            $item->images()->delete();
+        });
+    }
 }

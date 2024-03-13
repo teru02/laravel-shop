@@ -26,5 +26,6 @@ Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/top', 'ItemsController@index');
 Route::match(['GET','POST'],'/create','ItemsController@create');
-
+Route::get('/{id}/detail','ItemsController@detail');
+Route::post('/{id}/delete','ItemsController@delete')->name('item.delete');
 });

@@ -1,4 +1,4 @@
-@extends('layouts.sidebar')
+@extends('layouts.login')
 
 @section('content')
   <div class="container-fluid">

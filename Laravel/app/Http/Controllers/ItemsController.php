@@ -31,4 +31,15 @@ class ItemsController extends Controller
     }
         return view('item.create');
     }
+
+    public function detail($id){
+        $item=Item::find($id);
+        return view('item.detail')->with(['item'=>$item]);
+    }
+
+    public function delete($id){
+        $item=Item::find($id);
+        $item->delete();
+        return redirect('/top')->with('success', '商品を削除しました');
+    }
 }
